@@ -142,6 +142,8 @@ function moveBall() {
         });
     });
 
+    checkWin();
+
     // Bottom = Game Over
     if (ball.y + ball.size > ctx.canvas.height) {
         gameOver = true;
@@ -211,6 +213,31 @@ function drawGameOver() {
     ctx.fillText("GAME OVER!", ctx.canvas.width / 2, ctx.canvas.height / 2);
 
     ctx.font = "20px fantasy";
+    ctx.fillText("Press SPACE to Restart", ctx.canvas.width / 2, ctx.canvas.height / 2 + 40);
+}
+
+function checkWin() {
+    const allBricksGone = bricks.every(column =>
+        column.every(brick => !brick.visible)
+    );
+
+    if (allBricksGone) {
+        gameOver = true;
+        drawWin();
+    }
+}
+
+function drawWin() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
+    ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+    ctx.fillStyle = "#00ff88";
+    ctx.font = "40px Arial";
+    ctx.textAlign = "center";
+    ctx.fillText("YOU WIN! 🎉", ctx.canvas.width / 2, ctx.canvas.height / 2);
+
+    ctx.font = "20px Arial";
+    ctx.fillStyle = "#ffffff";
     ctx.fillText("Press SPACE to Restart", ctx.canvas.width / 2, ctx.canvas.height / 2 + 40);
 }
 
