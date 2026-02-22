@@ -206,11 +206,11 @@ function drawGameOver() {
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
     ctx.fillStyle = "#fff";
-    ctx.font = "40px Arial";
+    ctx.font = "40px fantasy";
     ctx.textAlign = "center";
-    ctx.fillText("GAME OVER", ctx.canvas.width / 2, ctx.canvas.height / 2);
+    ctx.fillText("GAME OVER!", ctx.canvas.width / 2, ctx.canvas.height / 2);
 
-    ctx.font = "20px Arial";
+    ctx.font = "20px fantasy";
     ctx.fillText("Press SPACE to Restart", ctx.canvas.width / 2, ctx.canvas.height / 2 + 40);
 }
 
