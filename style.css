@@ -1,0 +1,95 @@
+
+:root{
+    --background-color: #0edd8a;
+    --background-secondary-color: #3ac5ac;
+    --background-tertiary-color: #94d8bd;
+    --canvas-color: #0d393184;
+    --text-color: #ffffff;
+    --sidebar-color: #315e54c0;
+    --button-color: #315e54d6;
+    --hover-color: #315e54;
+}
+
+@font-face {
+  font-family: "MyFont";
+  src: url("fonts/SuperPixel.ttf") format("TrueType");
+}
+
+body{
+    background-color: var(--background-color);
+    background: linear-gradient(
+        to right,
+        var(--background-color),
+        var(--background-secondary-color),
+        var(--background-tertiary-color)
+    );
+    font-family: "MyFont", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh ;
+    margin:0;
+}
+
+h1{
+    color:var(--text-color);
+    text-align: center;
+    font-size: 2.75rem;;
+}
+
+canvas{
+    background-color: var(--canvas-color);
+    border-radius: 5px;
+    display:block;
+    width: 800px;
+    max-width: 96%;
+}
+
+.btn{
+    background-color: var(--button-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover{
+    background-color: var(--hover-color);
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.rules-btn {
+  position: absolute;
+  top: 1.875rem;
+  left: 1.875rem;
+}
+
+.rules {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--sidebar-color);
+  color: var(--text-color);
+  min-height: 100vh;
+  width: 400px;
+  padding: 3rem;
+  line-height: 1.5;
+  transform: translateX(-500px);
+  transition: transform 1s ease-in-out;
+}
+
+.rules.show {
+  transform: translateX(0);
+}
