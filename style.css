@@ -74,6 +74,7 @@ canvas{
   position: absolute;
   top: 1.875rem;
   left: 1.875rem;
+  font-family: fantasy;
 }
 
 .rules {

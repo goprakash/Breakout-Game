@@ -66,7 +66,7 @@ function drawBall() {
 
 function drawPaddle() {
     ctx.beginPath();
-    ctx.fillStyle =color;
+    ctx.fillStyle = secondarycolor;
     ctx.rect(paddle.x, paddle.y, paddle.w, paddle.h);
     ctx.fill();
     ctx.closePath();
